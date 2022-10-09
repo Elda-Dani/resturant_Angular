@@ -8,7 +8,25 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { RecipeComponent } from './recipe/recipe.component';
 import { LoginComponent } from './login/login.component';
+import { RouterModule, Routes } from '@angular/router';
 
+
+const appRoutes:Routes=[
+
+{
+  path:"",component:HomeComponent
+},
+{
+path:"about",component:AboutComponent
+},
+{
+  path:"recipe",component:RecipeComponent
+},
+{
+  path:"login",component:LoginComponent
+}
+
+]
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +38,8 @@ import { LoginComponent } from './login/login.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
